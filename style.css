@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background-image: url("images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: #114c8c;
+    font-family: 'Playfair Display', serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color: inherit;
+}
+
+/* Home Page */
+
+.home {
+    width: 850px;
+    max-width: 90vw;
+
+    height: 780px;
+    max-height: 90vh;
+
+    background: rgba(255, 241, 243, 0.94);
+
+    border-radius: 35px;
+    padding: 60px 70px;
+
+    overflow-y: auto;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.home::-webkit-scrollbar {
+    display: none;
+}
+
+.home h1 {
+    margin: 0 0 10px;
+    font-family: "Monsieur La Doulaise", cursive;
+    font-size: 60px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.home > p {
+    margin: 0 0 45px;
+    text-align: center;
+}
+
+/* Envelope Grid */
+
+.envelope-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 45px 60px;
+    width: 650px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.envelope {
+    width: 260px;
+    justify-self: center;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.envelope img {
+    display: block;
+
+    width: 250px;
+    height: 185px;
+    margin: 0 auto;
+
+    object-fit: contain;
+}
+
+.envelope p {
+    margin: 12px 0 0;
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.envelope:hover {
+    transform: translateY(-6px);
+}
+
+/* Letter Page */
+.letter-container {
+    position: relative;
+    width: 700px;
+    max-width: 90vw;
+    margin-top: 30px;
+}
+
+.opening-gif {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.letter-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 55%;
+
+    text-align: center;
+    opacity: 1;
+    transition: opacity 1.5s ease;
+}
+
+.letter-text.hidden {
+    opacity: 0;
+}
+
+.letter-text h1 {
+    margin: 0 0 20px;
+    font-size: 28px;
+    font-weight: normal;
+}
+
+.letter-text p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.back-link {
+    margin-top: 30px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.back-link:hover{
+    text-decoration: underline;
+}
+
+/* mobile version */
+@media (max-width: 600px) {
+
+  body {
+    padding: 20px 0;
+  }
+
+
+  /* HOME */
+
+  .home {
+    width: 90vw;
+
+    height: 80vh;
+
+    padding: 40px 15px;
+
+    border-radius: 25px;
+
+    overflow-y: auto;
+
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .home::-webkit-scrollbar {
+    display: none;
+  }
+
+  .home h1 {
+    font-size: 42px;
+  }
+
+  .home > p {
+    margin-bottom: 30px;
+  }
+
+
+  /* ENVELOPES */
+
+  .envelope-grid {
+    width: 100%;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px 0;
+
+    justify-items: center;
+  }
+
+  .envelope {
+    width: 150px;
+
+    justify-self: center;
+  }
+
+  .envelope img {
+    width: 150px;
+    height: 115px;
+  }
+
+  .envelope p {
+    margin-top: 8px;
+
+    font-size: 14px;
+  }
+
+
+  /* LETTER */
+
+  .letter-page {
+    padding: 30px 15px;
+  }
+
+  .letter-container {
+    width: 95vw;
+
+    margin-top: 20px;
+  }
+
+  .letter-text {
+    width: 55%;
+  }
+
+  .letter-text h1 {
+    margin-bottom: 12px;
+
+    font-size: 18px;
+  }
+
+  .letter-text p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+
+  /* BACK LINK */
+
+  .back-link {
+    margin-top: 20px;
+
+    font-size: 13px;
+  }
+}
