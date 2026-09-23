@@ -89,7 +89,12 @@ if (letter) {
     if (audio && letter.song && letter.song.src) {
         audio.src = letter.song.src;
         audio.muted = false;
+        audio.autoplay = true;
         audio.load();
+
+        audio.play().catch(() => {
+            console.log("Autoplay was blocked; user can press play manually.");
+        });
 
         if (songMeta) {
             songMeta.textContent = `${letter.song.title} • ${letter.song.artist}`;
